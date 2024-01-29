@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Price Prediction</title>
+    <link rel="stylesheet" href="static/css/styles.css" />
+  </head>
+
+  <body>
+    <nav
+      style="
+        background-color: #343a40;
+        padding: 10px;
+        color: #fff;
+        text-align: center;
+      "
+    >
+      <a href="/" style="color: white"
+        >FLIGHT PRICE PREDICTION - MACHINE LEARNING</a
+      >
+    </nav>
+
+    <div style="margin-top: 50px">
+      <form action="/predict" method="post">
+        <!-- Form input fields -->
+        <div
+          style="display: flex; flex-wrap: wrap; justify-content: space-between"
+        >
+          <div style="width: 48%">
+            <div
+              style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px"
+            >
+              <h5>Departure Date</h5>
+              <input
+                type="datetime-local"
+                name="Dep_Time"
+                required="required"
+              />
+            </div>
+          </div>
+
+          <div style="width: 48%">
+            <div
+              style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px"
+            >
+              <h5>Arrival Date</h5>
+              <input
+                type="datetime-local"
+                name="Arrival_Time"
+                required="required"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+          "
+        >
+          <div style="width: 48%">
+            <div
+              style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px"
+            >
+              <h5>Source</h5>
+              <select name="Source" required="required">
+                <option value="Delhi">Delhi</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Chennai">Chennai</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="width: 48%">
+            <div
+              style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px"
+            >
+              <h5>Destination</h5>
+              <select name="Destination" required="required">
+                <option value="Cochin">Cochin</option>
+                <option value="Delhi">Delhi</option>
+                <option value="New Delhi">New Delhi</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Kolkata">Kolkata</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+          "
+        >
+          <div style="width: 48%">
+            <div
+              style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px"
+            >
+              <h5>Stopage</h5>
+              <select name="stops" required="required">
+                <option value="0">Non-Stop</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="width: 48%">
+            <div
+              style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px"
+            >
+              <h5>Which Airline you want to travel?</h5>
+              <select name="airline" required="required">
+                <option value="Jet Airways">Jet Airways</option>
+                <option value="IndiGo">IndiGo</option>
+                <option value="Air India">Air India</option>
+                <option value="Multiple carriers">Multiple carriers</option>
+                <option value="SpiceJet">SpiceJet</option>
+                <option value="Vistara">Vistara</option>
+                <option value="Air Asia">Air Asia</option>
+                <option value="GoAir">GoAir</option>
+                <option value="Multiple carriers Premium economy">
+                  Multiple carriers Premium economy
+                </option>
+                <option value="Jet Airways Business">
+                  Jet Airways Business
+                </option>
+                <option value="Vistara Premium economy">
+                  Vistara Premium economy
+                </option>
+                <option value="Trujet">Trujet</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <input type="submit" value="Submit" class="btn" />
+      </form>
+
+      <br />
+      <div id="predictionText">
+        Your Flight price is Rs. {{ prediction_text }}
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      .btn {
+        width: 100px;
+        background-color: #343a40;
+        color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        display: block;
+        margin: 25px auto;   
+      }
+
+      #predictionText {
+        font-size: 18px;
+        font-weight: bold;
+      }
